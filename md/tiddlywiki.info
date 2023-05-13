@@ -1,0 +1,10 @@
+{
+    "description": "Release Obsidian",
+    "plugins": [
+        "tiddlywiki/tiddlyweb",
+        "tiddlywiki/filesystem"
+    ],
+    "themes": [
+        "tiddlywiki/vanilla"
+    ]
+}

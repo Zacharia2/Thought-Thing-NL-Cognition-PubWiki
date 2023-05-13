@@ -1,0 +1,16 @@
+{
+    "directories": [
+        {
+            "path": ".",
+            "filesRegExp": "^.*\\.md$",
+            "isTiddlerFile": false,
+            "isEditableFile": true,
+            "fields": {
+                "title": {"source": "basename"},
+                "created": {"source": "created"},
+                "modified": {"source": "modified"},
+                "type": "text/markdown"
+            }
+        }
+  ]
+}

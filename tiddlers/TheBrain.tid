@@ -1,10 +1,10 @@
 caption: TheBrain
 created: 20211220184056323
 creator: Sttot
-modified: 20230514120937153
+modified: 20230519091009832
 modifier: WhiteFall
 tags: $:/tags/SideBar
 title: TheBrain
 type: text/vnd.tiddlywiki
 
-<$echarts $tiddler="$:/plugins/Gk0Wk/echarts/addons/TheBrain.js" aliasField="caption" levels="2" graphTitle="The Barin View"/>
+<$echarts $tiddler="$:/plugins/Gk0Wk/echarts/addons/TheBrain.js" aliasField="caption" levels="2" graphTitle="The Barin View" height="100vh"/>

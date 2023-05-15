@@ -1,0 +1,7 @@
+created: 20230525115642555
+creator: WhiteFall
+list: $:/core/ui/Buttons/more-tiddler-actions $:/core/ui/Buttons/permaview $:/plugins/kookma/utility/ui/Buttons/DraggableLink $:/core/ui/Buttons/info $:/plugins/kookma/favorites/ui/buttons/add-remove $:/plugins/Gk0Wk/page-toc/PageTOCButton $:/core/ui/Buttons/new-here $:/core/ui/Buttons/new-journal-here $:/core/ui/Buttons/clone $:/core/ui/Buttons/export-tiddler $:/core/ui/Buttons/edit $:/core/ui/Buttons/delete $:/core/ui/Buttons/permalink $:/plugins/bimlas/locator/viewtemplate/open-in-sidebar $:/core/ui/Buttons/open-window $:/core/ui/Buttons/close-others $:/plugins/tiddlywiki/qrcode/ViewToolbarButton $:/core/ui/Buttons/close $:/core/ui/Buttons/fold-others $:/core/ui/Buttons/fold $:/core/ui/Buttons/fold-bar
+modified: 20230525115642555
+modifier: WhiteFall
+title: $:/tags/ViewToolbar
+type: text/vnd.tiddlywiki

@@ -5,6 +5,7 @@
             "filesRegExp": "^.*\\.md$",
             "isTiddlerFile": false,
             "isEditableFile": true,
+            "searchSubdirectories": true,
             "fields": {
                 "title": {"source": "basename"},
                 "created": {"source": "created"},

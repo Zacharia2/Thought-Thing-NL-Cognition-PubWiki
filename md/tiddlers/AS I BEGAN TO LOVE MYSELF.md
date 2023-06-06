@@ -1,4 +1,4 @@
-def:public this super [[自爱]]
+def:pub this super [[自爱]]
 
 
 # AS I BEGAN TO LOVE MYSELF

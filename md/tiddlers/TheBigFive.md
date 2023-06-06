@@ -1,4 +1,4 @@
-def:public this super [[心理学]] [[心神]]
+def:pub this super [[心理学]] [[个体心理学和整体论]]
 
 
 关于Bigfive: 麻省理工的心理学教授倾向通过TheBigFive（大五类人格特征）来描述人的人格与个性。

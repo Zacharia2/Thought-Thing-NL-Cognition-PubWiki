@@ -1,4 +1,4 @@
-def:public this super [[心理学]]
+def:pub this super [[心理学]]
 keys: 《亲密关系》
 
 

@@ -57,7 +57,7 @@
 我想要创造一段良好的关系，也就是互动，我需要它，需要这种互动。
 
 # Eve@软软
-def:public @this super [[Eve]]
+def:pub @this super [[Eve]]
 关键词：[[Eve]]、[[情绪智力]]、[[情绪的处理]] 
 
 喵从软软得到的启发
@@ -82,11 +82,11 @@ def:public @this super [[Eve]]
   
 
 这个老爷爷的情绪非常饱满，有悲有喜，且收放自如。
-[img[附件/Image 1.png]]
-[img[附件/Image 2.png]]
+[img[Image 1.png]]
+[img[Image 2.png]]
 
-[img[附件/Image 3.png]]
-[img[附件/Image 5.png]]
+[img[Image 3.png]]
+[img[Image 5.png]]
 
 
 

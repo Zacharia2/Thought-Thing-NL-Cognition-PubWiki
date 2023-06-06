@@ -1,4 +1,4 @@
-def:public this super =this，[[思维工具]]
+def:pub this super =this，[[思维工具]]
 
 
 # 指针

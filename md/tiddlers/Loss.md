@@ -1,4 +1,4 @@
-def:public this super [[IANDTA]]
+def:pub this super [[IANDTA]]
 keys:绝交
 
 # Loss or Fail or Disconnection

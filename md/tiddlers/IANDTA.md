@@ -1,4 +1,4 @@
-def:public this super [[社会学]]， [[Eve]]，[[Hi (Humanity-Itself)]] has [[合作]]，[[Touch]]，[[群体]]
+def:pub this super [[社会学]]， [[Eve]]，[[Hi (Humanity-Itself)]] has [[合作]]，[[Touch]]，[[群体]]
 keys:道德经
 
 # IANDTA
@@ -28,7 +28,7 @@ IANDTA  = 主体 + 互动。作为个体，我们能够做到的，这就是极�
 带有剧毒的漂亮花花与照顾它的人类朋友
 夹竹桃：只要不吃我，我们就是好朋友！
 
-[img[附件/1654256509681.png.png]]
+[img[1654256509681.png.png]]
 
 
 每个人从出生就不可能是一个整体，公用一个身体，那么分离是必然的，既然是两个不同的整体，那么就有了位置的不同角度的不同。

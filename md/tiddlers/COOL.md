@@ -1,2 +1,2 @@
-def:public this super [[静]]
+def:pub this super [[静]]
 

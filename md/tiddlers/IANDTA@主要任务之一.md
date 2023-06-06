@@ -82,11 +82,11 @@ def:public @this super [[Eve]]
   
 
 这个老爷爷的情绪非常饱满，有悲有喜，且收放自如。
-![[附件/Image 1.png]]
-![[附件/Image 2.png]]
+[img[附件/Image 1.png]]
+[img[附件/Image 2.png]]
 
-![[附件/Image 3.png]]
-![[附件/Image 5.png]]
+[img[附件/Image 3.png]]
+[img[附件/Image 5.png]]
 
 
 

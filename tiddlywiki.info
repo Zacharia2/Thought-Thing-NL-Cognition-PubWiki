@@ -10,11 +10,6 @@
   "languages": [
     "zh-Hans"
   ],
-  "includeWikis": [
-    {
-      "path": "md"
-    }
-  ],
   "build": {
     "index": [
       "--rendertiddler",

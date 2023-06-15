@@ -1,0 +1,100 @@
+created: 20230615124521531
+creator: WhiteFall
+modified: 20230615124521531
+modifier: WhiteFall
+title: StyleSheets
+type: text/vnd.tiddlywiki
+
+/* 编辑器工具栏 */
+/* $:/themes/tiddlywiki/vanilla/sticky */
+/* div.tc-editor-toolbar {top: 70px;} TW编辑器工具栏到TW页面工具栏的距离 */
+
+.tc-editor-toolbar {
+    position: -webkit-sticky;
+    position: -moz-sticky;
+    position: -o-sticky;
+    position: -ms-sticky;
+    position: sticky;
+    top: 70px;
+    background: ``<<colour tiddler-background>>``;
+    z-index: 500;
+}
+
+.tc-tiddler-preview {
+    overflow: unset;
+}
+
+
+/* 编辑器高度 */
+
+.CodeMirror-lines{
+     min-height:80px !important;
+}
+
+
+
+/* scrollbars */
+
+\rules only filteredtranscludeinline transcludeinline macrodef macrocallinline html
+
+html {
+  --scrollbarBG: <<color page-background>>;
+  --thumbBG: <<color sidebar-tiddler-link-foreground>>; /*other candidate colors: foreground, sidebar-tiddler-link-foreground */
+}
+
+/* only for Twilight palette use <<color sidebar-muted-foreground>> */
+
+/* Works on Firefox */
+* {
+  scrollbar-width: thin;
+}
+/* for Chrome, Edge */
+::-webkit-scrollbar,
+  scrollbar-width {
+  width: 8px;
+  height:8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbarBG);
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  border: 1.5px solid var(--scrollbarBG);
+  background-color: var(--thumbBG) ;
+}
+
+/* AdjustIMG */
+
+.img {
+    width: 300px;
+    height: 200px;
+}
+
+/* Alignment 对齐方式
+ * https://www.jb51.net/css/134690.html
+ */
+
+.limg {
+    display: inline;
+    float: left;
+    padding-right: 16px;
+}
+
+.rimg {
+    display: inline;
+    float: right;
+    padding-left: 16px;
+}
+
+.cimg {
+    clear: both;
+    display: block;
+    margin: auto;
+}
+
+/* 添加阴影 */
+
+.simg {
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}

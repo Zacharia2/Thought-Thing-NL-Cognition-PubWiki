@@ -1,0 +1,292 @@
+created: 20220929010127387
+creator: miao
+modified: 20230615115134197
+modifier: WhiteFall
+tags: 数据流与数据结构（魔法笔记） $:/tags/Commander/Working
+title: Android 组件与概念
+type: text/vnd.tiddlywiki
+
+
+
+! Android组件
+
+
+<<<
+找到足够webdav使用的即可，比如广播、Intend
+
+Activity，Service服务，Content Provider内容提供，BroadcastReceiver广播接收器。
+<<<
+
+Activity：你不用调用我，我会调用你——方法的''作用和发生时间''。
+
+
+[img[Context继承关系.png]]
+
+
+
+!! Android 活动(Activity)
+https://www.runoob.com/android/android-acitivities.html
+
+Activity是一个应用程序组件，提供一个屏幕，用户可以用来交互为了完成某项任务。Android 的活动是 ContextThemeWrapper 类的子类。
+
+如果你曾经用 C,C++ 或者 Java 语言编程，你应该知道这些程序从 main() 函数开始。很类似的，Android 系统初始化它的程序是通过活动中的 onCreate() 回调的调用开始的。存在有一序列的回调方法来启动一个活动，同时有一序列的方法来关闭活动
+
+Activity中所有操作都与用户密切相关，是一个负责与用户交互的组件，可以通过setContentView(View)来显示指定控件。
+
+在一个android应用中，一个Activity通常就是一个单独的屏幕，它上面可以显示一些控件也可以监听并处理用户的事件做出响应。Activity之间通过Intent进行通信。
+
+
+!! Android 服务（Service）
+https://www.runoob.com/android/android-services.html
+
+服务是一个后台运行的组件，执行长时间运行且不需要用户交互的任务。即使应用被销毁也依然可以工作。服务基本上包含两种状态
+
+# Started	Android的应用程序组件，如活动，通过startService()启动了服务，则服务是Started状态。一旦启动，服务可以在后台无限期运行，即使启动它的组件已经被销毁。
+# Bound	当Android的应用程序组件通过bindService()绑定了服务，则服务是Bound状态。Bound状态的服务提供了一个客户服务器接口来允许组件与服务进行交互，如发送请求，获取结果，甚至通过IPC来进行跨进程通信。
+
+
+!! Android 广播接收器(Broadcast Receivers)
+https://www.runoob.com/android/android-broadcast-receivers.html
+
+广播接收器用于响应来自其他应用程序或者系统的广播消息。这些消息有时被称为事件或者意图。例如，应用程序可以初始化广播来让其他的应用程序知道一些数据已经被下载到设备，并可以为他们所用。这样广播接收器可以定义适当的动作来拦截这些通信。
+
+有以下两个重要的步骤来使系统的广播意图配合广播接收器工作。
+
+# 创建广播接收器
+# 注册广播接收器
+
+还有一个附加的步骤，要实现自定义的意图，你必须创建并广播这些意图。
+
+
+!! 线程间通信：Handler
+
+https://blog.csdn.net/ly0724ok/article/details/117324053/
+
+# 主线程在启动一个子线程，子线程运行并生成Message，Looper获取message并传递给Handler。
+# Handler逐个获取子线程中的Message.
+
+Binder/Socket用于进程间通信，而Handler消息机制用于同进程的线程间通信，可以说只要有异步线程与主线程通信的地方就一定会有 Handler。
+
+主要应用于：多个线程并发操作UI组件。工作线程需要更新UI时，通过Handler通知主线程，然后再主线程更新UI操作。
+
+* 主线程：当应用程序第一次启动时，会同时自动开启一条主线程，作用处理与UI相关的事件（如更新、操作等）
+* 子线程：人为手动开启的线程，执行耗时操作（如网络请求、数据加载等。）
+* 处理者（Handler）：主线程与子线程的通行媒介、线程消息的主要处理者。作用：添加`消息`到`消息队列`、处理`Looper`分配过来的`消息`
+* 消息（Message）：线程间通讯的数据单元、处理者接受与处理的消息对象。作用存储需要操作的通信信息。
+* 消息队列（Message Queue）：先进先出的数据结构，用于存储Handler发过来的消息（Message）
+* 循环器（Looper）：循环取出消息队列的消息，将取出的消息发送给 对应的消息处理者。注：每个线程仅有一个Looper。一个Looper可以绑定多个线程的Handler。
+
+
+
+
+!! 进程间通信：IBinder和Binder
+
+https://blog.csdn.net/lyglostangel/article/details/120886748
+
+IBinder 是远程对象的基本接口，是为了高性能而设计的轻量级远程调用机制的核心部分。Binder是实现了IBinder的具体实现类，他具有具体的功能，继承了Binder的类就是IBinder对象了。
+
+Binder机制是Android系统提供的跨进程通讯机制， 机制由一系列系统组件构成： Client、Server、Service Manager 和 Binder 驱动程序。
+
+
+<<<
+Binder无需关心底层如何实现，只需按照 AIDL 的规则，自定义一个接口文件， 然后调用调用接口中的方法，就可以完成两个进程间的通信了。
+<<<
+
+
+!!! Binder通信模型
+
+首先在理解模型之前先熟悉这几个概念：
+
+* Client进程：跨进程通讯的客户端（运行在某个进程）
+* Server进程：跨进程通讯的服务端（运行在某个进程）
+* Binder驱动：跨进程通讯的介质
+
+[img[Binder驱动.png]]
+
+
+ServiceManager：跨进程通讯中提供服务的注册和查询（运行在System进程）
+
+这里只是个简单的模型而已，只需理解模型的通讯流程：
+
+# Server端通过Binder驱动在ServiceManager中注册
+# Client端通过Binder驱动获取ServiceManager中注册的Server端
+# Client端通过Binder驱动和Server端进行通讯
+
+Binder通信原理
+
+[img[Binder通信原理.png]]
+
+理解完模型流程之后，开始理解模型的通讯原理：
+
+# Service端通过Binder驱动在ServiceManager的查找表中注册Object对象的add方法
+# Client端通过Binder驱动在ServiceManager的查找表中找到Object对象的add方法，并返回proxy对象的add方法，add方法是个空实现，proxy对象也不是真正的Object对象，是通过Binder驱动封装好的代理类的add方法
+# 当Client端调用add方法时，Client端会调用proxy对象的add方法，通过Binder驱动去请求ServiceManager来找到Service端真正对象，然后调用Service端的add方法
+
+Binder对象和Binder驱动
+
+# Binder对象：Binder机制中进行进程间通讯的对象，对于Service端为Binder本地对象，对于Client端为Binder代理对象
+# Binder驱动：Binder机制中进行进程间通讯的介质，Binder驱动会对具有跨进程传递能力的对象做特殊处理，自动完成代理对象和本地对象的转换
+
+由于Binder驱动会对具有跨进程传递能力的对象做特殊处理，自动完成代理对象和本地对象的转换，因此在驱动中保存了每一个跨越进程的Binder对象的相关信息，Binder本地对象（或Binder实体）保存在binder_node的数据结构，Binder代理对象（或Binder引用/句柄）保存在binder_ref的数据结构
+
+
+
+
+!! Bundle传递键值对数据
+
+https://blog.csdn.net/weixin_45625639/article/details/123337075
+
+Bundle主要用于传递数据；它保存的数据，是以key-value(键值对)的形式存在的。
+
+经常使用Bundle在Activity之间传递数据，传递的数据可以是boolean、byte、int、long、float、double、string等基本类型或它们对应的数组，也可以是对象或对象数组。当Bundle传递的是对象或对象数组时，必须实现Serializable 或Parcelable接口。
+
+
+
+
+!! 组件之间通信回调：ResultReceiver
+
+''Activity与Service''
+
+https://blog.csdn.net/gf771115/article/details/115983701
+
+组件之间通信回调的问题：例如使用一个IntentService开新工作线程处理一些耗时任务后，如何通知到启动它的Activity？
+
+
+<<<
+回调函数的主要功能，参数传递，也就是应用或程序间传递数据用的。
+
+你给设计师下达了设计任务，设计师收到任务后开始进行设计，设计完成后通知你进行验收。
+
+这一个简短的流程，就将回调的概念体现的淋漓尽致。整个流程中最重要的就是：''设计师完成后并通知你''这个动作，也就是回调。而回调的方式（函数）可以是电话、微信、QQ等。
+
+再延展一下，同步回调和异步回调；同步回调就是你坐在设计师旁边，什么也不做，就等着他设计完；异步回调就是设计师在设计的时候，你做其他的事情。
+
+回调对于系统运行效率有着重要的意义，因为有了回调的存在，程序不需要傻傻的等着其他程序的反馈，而是转身做其他的事情就好。等有具体的结果通过回调返回后，再去执行下一步操作就可以了。
+<<<
+
+
+
+# 如果在Activity主线程创建的handler实例，则回调也会在主线程执行。就可以直接在回调中操作UI。ResultReceiver构造函数的Handler的作用只有一个，就是控制被调用（回调）函数  ''执行在''（指向具体的线程（位置））  创建Handler的线程。
+# send（函数）：若是实例化时handler传Null，则直接在''调用send方法的线程''（tip：位置）中执行onReceiveResult回调。若是handler不为空，就用handler来post。对于Activity来说是预制逻辑，然后Service使用send触发预制逻辑。
+# onReceiveResult（被调用函数）：一个空函数，用来给使用者自己Override的，来执行自己的逻辑。
+
+
+整个流程：
+
+# Activity在启动Service时传递ResultReceiver实例给Service。
+# Service执行结束后，调用receiver.send( , )。
+# 然后在onReceiveResult里面处理回调逻辑。
+
+
+```java
+Activity部分
+
+
+public class MainActivity extends AppCompatActivity {
+ 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+ 
+    private static Handler handler = new Handler(){
+    };
+    private ResultReceiver mResultReceiver = new ResultReceiver(handler){
+        @Override
+        protected void onReceiveResult(int resultCode, Bundle resultData) {
+            Toast.makeText(MainActivity.this, "receive " + resultCode, Toast.LENGTH_LONG).show();
+        }
+    };
+ 
+    public void onClick(View view){
+        Intent intent = new Intent(MainActivity.this, MyIntentService.class);
+        intent.putExtra("result_receiver", mResultReceiver);
+        startService(intent);
+    }
+ 
+}
+Service部分
+
+public class MyIntentService extends IntentService {
+ 
+    public MyIntentService(){
+        super("default");
+    }
+    /**
+     * Creates an IntentService.  Invoked by your subclass's constructor.
+     *
+     * @param name Used to name the worker thread, important only for debugging.
+     */
+    public MyIntentService(String name) {
+        super(name);
+    }
+ 
+    @Override
+    protected void onHandleIntent(Intent intent) {
+        Log.d("Sam", "handleIntent");
+        ResultReceiver receiver = (ResultReceiver) intent.getExtras().get("result_receiver");
+        if (receiver != null){
+            receiver.send(19, null);
+        }
+    }
+ 
+}
+代码的执行结果就是按下按钮则弹出Toast： receive 19
+```
+
+
+
+!! Intent意图
+
+https://blog.csdn.net/mike_jungle/article/details/110624310
+
+Intent 用于解决 Android 应用的各项组件之间的通讯，例如：启动组件，传递数据。分为显式 Intent 和隐式 Intent。
+
+Intent不仅可用于应用程序之间，也可用于应用程序内部的 activity,  service 和  broadcast receiver 之间的交互。Intent这个英语单词的本意是“目的、意向、意图”。
+
+Intent是一种运行时绑定（runtime binding)机制，它能在程序运行的过程中连接两个不同的组件。通过Intent，你的程序可以向Android表达某种请求或者意愿，Android会根据意愿的内容选择适当的组件来响应。
+
+activity、service和broadcast receiver之间是通过Intent进行通信的，而另外一个组件Content Provider本身就是一种通信机制，不需要通过Intent。
+
+
+
+
+!! Context对象A的当前工作环境
+
+https://blog.csdn.net/u010347226/article/details/125812572
+
+Context，字面意思：语境、环境、上下文。在 Android 系统中，可以理解为''当前对象在应用程序中所处的工作环境''。其内部定义很多访问应用程序环境中全局信息的接口，通过它可以访问到应用程序的资源有关的类，如：Resources、AssetManager、Package 及权限相关信息等。还可以通过它调用应用程序级的操作，如：启动 Activity 和 Service、发送广播等。
+
+[img[继承关系Context.png]]
+
+
+
+!! Application
+
+Application 是 Android 系统框架中的一个系统组件，当 Android 应用程序启动时系统会创建一个 Application 类的对象且只创建一个，用来存储系统的一些信息，即 Application 是单例的。
+
+通常在开发过程中是不需要指定一个 Application 的，系统自动帮开发者创建，如果要创建应用自定义的 Application，只需创建一个类继承 Application 并在 AndroidManifest.xml 文件中的 application 标签中进行注册（只需给 application 标签增加 name 属性，并添加自定义的 Application 的名字即可）。
+
+通常自定义 Application 的目的是在应用程序启动时做一些全局的初始化工作，当应用程序启动时，Application 同步创建并启动，系统会创建⼀个 PID，即进程ID，所有的 Activity 都会在此进程上运⾏，因此都可以取到这些初始化的全局变量的值，且由于 Application 对象在整个应用程序运行期间会一直存在，有开发者就会在 Application 中编写一些工具方法，全局获取使用，但是切记不要这样把 Application 当工具类使用。注意：这严重违背 Google 设计 Application 的原则，也违背设计模式中的单一职责原则。
+
+
+
+
+!! Configuration系统配置信息
+android.content.res.Configuration
+
+Configuration类专门描述手机设备上的配置信息，这些配置信息既包括用户特定的配置项，也包括系统的动态设备配置。
+
+
+
+
+!! ~BaseAdapter视图和数据的桥梁
+
+Adapter是什么？简单理解就是adapter是view和数据的桥梁。在一个ListView或者GridView中，你不可能手动给每一个格子都新建一个view，所以这时候就需要Adapter的帮忙，它会帮你自动绘制view并且填充数据。
+
+BaseAdapter是什么？从英文就可以知道了，最基础的Adapter，也就是说，它可以做所有的事情。所以为什么说最实用最常用，原因就在于它的全能性，但是这样的话，使用起来自然会更加麻烦一点。
+
+
+
+preference.PreferenceManager

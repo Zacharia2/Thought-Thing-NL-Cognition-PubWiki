@@ -1,0 +1,12 @@
+created: 20220827000645369
+creator: miao
+modified: 20230615115134214
+modifier: WhiteFall
+tags: [[Module 模块&工具]] $:/tags/Commander/Working
+title: Module，文本处理函数库
+type: text/vnd.tiddlywiki
+
+# TextBlob是一个用于处理文本数据的Python库。它提供了一个简单的API用于常见的自然语言处理(NLP)任务，如词性标注，名词短语提取，情感分析，分类，翻译等。
+# SnowNLP是一个python写的类库，可以方便的处理中文文本内容，是受到了TextBlob的启发而写的，由于现在大部分的自然语言处理库基本都是针对英文的，于是写了一个方便处理中文的类库，并且和TextBlob不同的是，这里没有用NLTK，所有的算法都是自己实现的，并且自带了一些训练好的字典。注意本程序都是处理的unicode编码，所以使用时请自行decode成unicode。
+# Python中有一个不错的OCR库-EasyOCR，在GitHub已有9700star。它可以在python中调用，用来识别图像中的文字，并输出为文本。https://github.com/JaidedAI/EasyOCR
+

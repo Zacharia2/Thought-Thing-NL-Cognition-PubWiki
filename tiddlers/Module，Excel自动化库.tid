@@ -1,0 +1,32 @@
+created: 20220827004312243
+creator: miao
+modified: 20230615115134220
+modifier: WhiteFall
+tags: [[Module 模块&工具]] $:/tags/Commander/Working
+title: Module，Excel自动化库
+type: text/vnd.tiddlywiki
+
+[[全网最全Python操作Excel教程，赶紧收藏|https://blog.csdn.net/weixin_54556126/article/details/121974006?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-4-121974006-blog-112962655.pc_relevant_multi_platform_featuressortv2dupreplace&spm=1001.2101.3001.4242.3&utm_relevant_index=7]]
+
+小破站和百度云有现成的教程和文档。
+
+[img[PythonExcel自动化库01-png]]
+
+
+xlrd、xlwt、xlutils 各自的功能都有局限性，但三者互为补充，覆盖了Excel文件尤其是 .xls 文件的操作。xlwt 可以生成 .xls 文件，xlrd 可以读取已经存在的 .xls 文件，xlutils 连接 xlrd 和 xlwt 两个模块，使用户可以同时读写一个 .xls 文件。简单来说，xlrd 负责读、xlwt 负责写、xlutils 负责提供辅助和衔接。xlwt 写入操作Excel（仅限xls格式！）
+
+xlwings 能够非常方便的读写 Excel 文件中的数据，并且能够进行单元格格式的修改。https://github.com/xlwings
+
+XlsxWriter 是一个用来写 .xlsx 文件格式的模块。它可以用来写文本、数字、公式并支持单元格格式化、图片、图表、文档配置、自动过滤等特性。但不能用来读取和修改 Excel 文件
+
+
+! Xlrd模块介绍
+（1）什么是xlrd模块？
+
+python操作excel主要用到xlrd和xlwt这两个库，即xlrd是读excel，xlwt是写excel的库。
+
+（2）为什么使用xlrd模块？
+
+在UI自动化或者接口自动化中数据维护是一个核心，所以此模块非常实用。
+
+xlrd模块可以用于读取Excel的数据，速度非常快，推荐使用！

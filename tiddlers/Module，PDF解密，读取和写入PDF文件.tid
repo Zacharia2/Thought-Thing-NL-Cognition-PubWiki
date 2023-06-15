@@ -1,0 +1,20 @@
+created: 20220827022048887
+creator: miao
+modified: 20230615115134222
+modifier: WhiteFall
+tags: [[Module 模块&工具]] $:/tags/Commander/Working
+title: Module，PDF解密，读取和写入PDF文件
+type: text/vnd.tiddlywiki
+
+pikepdf是一个Python库，用于读取和写入PDF文件。可以用作解密工具。
+https://github.com/pikepdf/pikepdf
+
+
+简单的使用：
+假设我在当前目录下又一个被加密的pdf文件locked.pdf，我们用pikepdf打开它再重新保存就可以完成pdf解密
+
+```python
+import pikepdf
+pdf = pikepdf.open('./locked.pdf')
+pdf.save('unlocked.pdf')
+```

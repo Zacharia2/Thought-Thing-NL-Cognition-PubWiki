@@ -1,0 +1,97 @@
+created: 20221204044907415
+creator: miao
+modified: 20230615115134211
+modifier: WhiteFall
+tags: 收集的小程序片段 $:/tags/Commander/Working
+title: Excel批量发送带不同附件的邮件
+type: text/vnd.tiddlywiki
+
+* 点击开发工具→表单控件，插入表单控件，修改控件名称为你自己想设置的名称。
+* 需要安装Microseft Outlook
+* 开发工具选项卡-控件-查看源码，打开vb窗口，在工具/引用中勾选Microseft Outlook 版本号 Object Library
+* 创建两个工作表，发送清单工作表、正文工作表。
+* 点击开发工具→查看代码，点击视图→工程资源管理器，插件-模块。
+* 绑定按钮
+
+|发送清单工作表|
+|收件人邮箱|抄送收件人邮箱|附件|
+|2121@12.com|34343@12.com|D:\Software\Z_Linkages|
+
+|正文工作表|
+|主题|主题主题主题主题主题主题主题主题主题主题主题|
+|正文|正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文|
+
+
+```vba
+Sub Mysent()
+    On Error Resume Next
+    
+    Dim rowCount, endRowNo
+    
+    '要正常运行下面这句,要将工具/引用中的Microseft Outlook *.0 Object Library(其中*为你Microseft Outlook的版本号)选上
+    
+    Dim objOutlook As New Outlook.Application
+    
+    Dim objMail As MailItem
+    
+    '取得当前工作表与Cells(1,1)相连的数据区行数
+    
+    endRowNo = Cells(1, 1).CurrentRegion.Rows.Count
+    
+    '创建objOutlook为Outlook应用程序对象
+    
+    Set objOutlook = New Outlook.Application
+    
+    '开始循环发送电子邮件
+    'for i=初始值 to 结束值 step 步长值
+    '从第二行开始，第一行为标题。
+    For rowCount = 2 To endRowNo
+    
+    
+        '发送清单工作表，第二行第三列为附件
+        A = Application.WorksheetFunction.Clean(Worksheets("发送清单").Cells(rowCount, 3))
+        
+        '创建objMail为一个邮件对象
+        
+        Set objMail = objOutlook.CreateItem(olMailItem)
+        
+        With objMail
+            
+            '设置收件人地址
+            '第二行第一列，收件人地址
+            .To = Cells(rowCount, 1)
+            
+            '设置抄送收件人地址
+            '第二行第二列，抄送收件人地址
+            .CC = Cells(rowCount, 2)
+            
+            '设置邮件主题
+            
+            .Subject = Worksheets("正文").Cells(1, 2)
+            
+            '设置邮件内容
+            
+            .Body = Worksheets("正文").Cells(2, 2)
+            
+            '设置附件
+            
+            .Attachments.Add A
+            
+            '自动发送邮件
+            
+            .Send
+            
+        End With
+        
+        '销毁objMail对象
+        
+        Set objMail = Nothing
+        
+    Next
+    
+    X = (endRowNo - 1) & "封邮件都发完了哦"
+    
+    MsgBox X
+    
+End Sub
+```

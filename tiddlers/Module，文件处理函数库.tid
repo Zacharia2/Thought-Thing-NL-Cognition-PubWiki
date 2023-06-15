@@ -1,0 +1,43 @@
+created: 20220827010129376
+creator: miao
+modified: 20230615115134215
+modifier: WhiteFall
+tags: [[Module 模块&工具]] $:/tags/Commander/Working
+title: Module，文件处理函数库
+type: text/vnd.tiddlywiki
+
+
+<<<
+库名称简介Mimetypes，Python标准库，映射文件名到MIME类型。
+<<<
+
+
+# imghdr，Python标准库，确定图像类型。python-magic，libmagic文件类型识别库，Python接口格式。path.py，os.path模块的二次封装。
+
+# watchdog，一组API和shell实用程序，用于监视文件系统事件。
+
+# Unipath，面向对象的文件/目录的操作工具包。pathlib，-（Python 3.4版已经作为Python标准库），一个跨平台，面向path的函数库。
+
+# pickle/cPickle,python的pickle模块实现了基本的数据序列和反序列化。通过pickle模块的序列化操作我们能够将程序中运行的对象信息保存到文件中去，永久存储；通过pickle模块的反序列化操作，我们能够从文件中创建上一次程序保存的对象。
+
+# cPickle是[C语言]实现的版本，速度更快。
+
+# ConfigParser，Python标准库，INI文件解析器。
+
+# configobj，INI文件解析器。config，分层次配置，logging作者编写。
+
+# profig，多格式配置转换工具。
+
+# logging，Python标准库，日志文件生成管理函数库。
+
+# logbook，logging的替换品。
+
+# Sentry，实时log服务器。Raven，哨兵Sentry的Python客户端。
+
+# Sphinx，斯芬克斯（狮身人面像），Python文档生成器。
+
+# reStructuredText，标记语法和解析工具，Docutils组件。mkdocs，Markdown格式文档生成器。
+
+# pycco，简单快速、编程风格的文档生成器。
+
+# pdoc，自动生成的Python库API文档epydoc，从源码注释中生成各种格式文档的工具

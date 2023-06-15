@@ -1,0 +1,25 @@
+created: 20220827022545726
+creator: miao
+modified: 20230615115134224
+modifier: WhiteFall
+tags: [[Module 模块&工具]] $:/tags/Commander/Working
+title: Module，ZIP、7z、RAR等压缩包解密算法
+type: text/vnd.tiddlywiki
+
+!! 常见的压缩格式
+ZIP、7z、rar、bzip2、tar
+
+!! 解密算法原理
+其实原理很简单，一句话概括就是「大力出奇迹」，Python 有两个压缩文件库：`zipfile` 和 `rarfile`，这两个库提供的解压缩方法 extractall()可以指定密码，这样的话首先生成一个密码字典（手动或用程序），然后依次尝试其中的密码，如果能够正常解压缩表示密码正确。
+
+
+<<<
+bzip2、tar的函数库：bz2、tarfile
+<<<
+
+
+计算常见密码组合的概率分布，或许是一个优化算法。还有类似二分法之类的算法。
+
+!! 高效迭代库itertools，排列组合随便求
+
+`itertools.permutations(iterable[, r])`：返回迭代器中元素的连续长度为r的全排列。如果r未指定或为None，则r默认为可迭代对象的长度，并生成所有可能的全长度排列。

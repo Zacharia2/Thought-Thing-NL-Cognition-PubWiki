@@ -1,0 +1,15 @@
+created: 20220827010935197
+creator: miao
+modified: 20230615115134214
+modifier: WhiteFall
+tags: [[Module 模块&工具]] $:/tags/Commander/Working
+title: Module，环境&Make
+type: text/vnd.tiddlywiki
+
+# conda，跨平台，二进制软件包管理器。
+# miniconda，迷你版conda。
+# py2exe, Windows平台的Freeze脚本工具，将python脚本转换为windows上可以独立运行的可执行程序
+# py2app，MAC OS X平台的Freeze脚本工具
+# pyinstaller，-转换成独立的可执行文件的Python程序（跨平台）。
+# nuitka，效果要比pyinstaller好很多。
+# pynsist,构建Windows安装程序的工具，用Python编写。

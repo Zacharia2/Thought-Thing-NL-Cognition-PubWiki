@@ -1,0 +1,35 @@
+created: 20220911074356372
+creator: miao
+modified: 20230615115134154
+modifier: WhiteFall
+tags: 数据流与数据结构（魔法笔记） $:/tags/Commander/Working
+title: 编程语言的特性与概念
+type: text/vnd.tiddlywiki
+
+\define select-tiddler-toshow()
+<$select tiddler='$:/generated-list-demo-state'>
+<$list filter='[tag[编程语言的特性与概念]]'>
+<option><$view field='title'/></option>
+</$list>
+</$select>
+\end
+
+
+
+<div style="margin-bottom: 1rem;padding: 10px 28px;border-radius: 5px;box-shadow: 0.5px 1px 17px -8px #A3A5AE;">
+
+浏览条目 <<select-tiddler-toshow>>：
+
+</div>
+
+<<<
+''先讲模型与概念，后讲实现与代码。''
+<<<
+
+<$tiddler tiddler={{$:/generated-list-demo-state}}>
+<$link mode='block'/>
+</$tiddler>
+
+<$tiddler tiddler={{$:/generated-list-demo-state}}>
+<$transclude mode='block'/>
+</$tiddler>

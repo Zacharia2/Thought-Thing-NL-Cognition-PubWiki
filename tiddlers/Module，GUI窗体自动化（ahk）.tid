@@ -1,0 +1,35 @@
+created: 20220827015805958
+creator: miao
+modified: 20230615115134221
+modifier: WhiteFall
+tags: [[Module 模块&工具]] $:/tags/Commander/Working
+title: Module，GUI窗体自动化（ahk）
+type: text/vnd.tiddlywiki
+
+PyAutoGUI的思路是接管了鼠标、键盘使用权，基本上完全照搬人的操作，底层不必套牢在Windows系统，没错，它是跨平台的。
+
+日常使用计算机，命令行程序可以说是为批量操作文件而生，但作为普通用户，最多的还是通过鼠标键盘操作形形色色的图形界面程序。
+
+有成千上万个文件，都需要通过图形界面进行同样的一套编辑、保存工作，靠手工一遍一遍地重复做，累死人不说，时间久了必然出现错误，要想图形界面也能像命令行程序那样精确控制，就需要GUI自动化工具了。
+
+# pyperclip 复制粘贴
+# autopy：模拟鼠标和键盘的点击操作
+# dearpygui，api统一，部件也齐，能够绘制2d和3d
+
+
+<<<
+AutoHotKey 简称 ahk，是一款 windows 平台下的热键脚本语言程序。能够通过自定义脚本实现一些重复性强没技术含量的自动化操作，而且占用资源极小，仅 3M 大小。
+<<<
+
+
+!! pywin32模块
+
+<<<
+# win32api：提供了常用的用户API；Windows开发接口模块。主要负责模拟键盘和鼠标操作,对win32gui获取的标签进行点击/获取值/修改值等操作。即为Microsoft 32位平台的应用程序编程接口。SendMessage PostMessage GetCursorPos等win32api与win32gui均包含的函数，用法也相同。
+# win32gui：提供了有关用户界面图形操作的API；Windows图形界面接口模块。主要负责操作窗口切换以及窗口中元素id标签的获取。FindWindow和 FindWindowEx 函数都可以使用。
+# win32con：提供了消息常量的操作API；全面的库函数，提供Win32gui和Win32api需要的操作参数。
+
+
+# win32file：提供了文件操作的API；
+# win32com：提供COM组件操作API。
+<<<

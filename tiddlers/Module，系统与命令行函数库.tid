@@ -1,0 +1,138 @@
+created: 20220827010103276
+creator: miao
+modified: 20230615115134215
+modifier: WhiteFall
+tags: [[Module 模块&工具]] $:/tags/Commander/Working
+title: Module，系统与命令行函数库
+type: text/vnd.tiddlywiki
+
+
+<<<
+库名称简介threading，Python标准线程库，更高级别的线程接口。
+<<<
+
+
+# envoy，特使，Python子线程的函数库。
+# sh，成熟的子线程替换函数库。sarge，封装线程。subprocess,调用shell命令的神器argparse，写命令行脚本必备，强大的命令行差数解析工具timeit，计算代码运行的时间等等unp，命令行工具，解压文件。
+# eventlet开销很少的多线程模块，使用的是 green threads 概念，例如，pool = eventlet.GreenPool(10000) 这样一条语句便创建了一个可以处理 10000 个客户端连接的线程池。 类似Gevent线程库Gevent，多线程模块pytools,著名的python通用函数、工具包SendKeys, 键盘鼠标操作模块, 模拟键盘鼠标模拟操作。
+# Psyco，超强的python性能优化工具，psyco 的神奇在于它只需要在代码的入口处调用短短两行代码，性能就能提升 40% 或更多，真可谓是立竿见影！如果你的客户觉得你的程序有点慢，敬请不要急着去优化代码，psyco 或许能让他立即改变看法。
+# winreg：Windows注册表访问 
+
+
+
+<<<
+例如:mpv的安装脚本程序，就是涉及到文件的操作，和注册表的操作。
+<<<
+
+
+!! Linux配置文件格式
+
+[[程序常用配置文件格式介绍|https://dablelv.blog.csdn.net/article/details/102626144]]
+
+!!! 键值对
+
+键值对是一个非常简单易用的配置文件格式。每一个键值对表示一项配置，键值对的分隔符一般使用等号或冒号。解析时，可以将 # 号开始的行视为注释行，以达到注释的功能。以键值对为表现形式的配置文件格式常见的有 Windows .ini 文件和 Java 中的 .properties 文件。
+
+例如下面是一个使用键值对表示的后台服务配置。
+
+```
+# This is a comment
+name=UserProfileServer
+maxconns=1000
+queuecap=10000
+queuetimeout=300
+loglevel=ERROR
+logsize=10M
+lognum=10
+logpath=/usr/local/app/log
+```
+
+在解析上面的配置时，可以按行读取，然后放到 map 中。
+
+
+!!! INI
+
+INI 文件采用了键值对的格式：
+
+```
+[example]
+name=Tux
+style=widgety,fidgety
+enabled=1
+```
+
+这种简单的配置风格很直观，只要你别选择使用糟糕的键名（比如用 unampref 这样的神秘键名来代替 name）就好。这些键值对很容易解析和编辑。
+
+除了键和值之外，INI 格式还可以分 节(section)。在下列示例代码中，[example] 和 [demo] 就是配置文件中的两个节：
+
+```
+[example]
+name=Tux
+style=widgety,fidgety
+enabled=1
+
+[demo]
+name=Beastie
+fullscreen=1
+```
+
+这几个配置语句解析起来有点复杂，因为有两个 name 键。想象一下，一个粗心的程序员在这个配置文件中查询 name，结果总是返回 Beastie，因为这是文件中对 name 的最后一个定义值。在解析这样的文件时，开发人员必须加倍小心地在各节中搜索键，这可能会很棘手，具体取决于用来解析该文件的语言。然而，它仍然是一种很流行的格式，大多数语言都会有一个现成的库来帮助程序员解析 INI 文件。
+
+!!! YAML
+
+YAML 文件 是结构化列表，可以包含值或者键值对：
+
+```
+Example:
+  Name: 'Tux'
+  Style:
+   - 'widgety'
+    - 'fidgety'
+  Enabled: 1
+```
+
+YAML 格式很流行，部分原因是它看起来很整洁。数据要放置到相对其上层数据的特定位置，除此之外没有太多其他语法。然而，对于某些人来说的这种特色，在其他人眼中可能就是一个问题。许多开发人员不愿使用 YAML，正是因为它很看重本质上 不存在 的东西。如果你在 YAML 中缩进错误，YAML 解析器可能会将你的文件视为无效文件，即使不视为无效，返回的数据也可能是错误的。
+
+大多数语言都有 YAML 解析器，并且有很好的开源 YAML linters（验证语法的应用程序）来帮你确保 YAML 文件的完整性。
+
+!!! JSON
+
+JSON 文件在技术上来说是 YAML 的子集，因此其数据结构是相同的，尽管其语法完全不同：
+
+```
+{
+  "Example": {
+    "Name": [
+      "Tux"
+    ],
+    "Style": [
+      "widgety",
+      "fidgety"
+    ],
+    "Enabled": 1
+  }
+}
+```
+
+JSON 在 JavaScript 程序员中很流行，这并不奇怪，因为 JSON 全称为 JavaScript 对象符号(JavaScript Object Notation)。由于与 Web 开发密切相关，JSON 是 Web API 的常见输出格式。大多数编程语言都有解析 JSON 的库。
+
+!!! XML
+
+XML 使用标签作为键，将配置值围绕起来：
+
+```
+<example>
+  <name>Tux</name>
+  <style priority="user">widgety</style>
+  <style priority="fallback">fidgety</style>
+  <enabled>1</enabled>
+</example>
+```
+
+XML 经常被 Java 程序员使用，Java 有一套丰富的 XML 解析器。虽然 XML 以非常严格而著称，但同时也非常灵活。与有一系列特定标签的 HTML 不同，XML 中可以随意发明自己的标签。只要始终坚持相同的构建规则，并有一个良好的库来解析它，你就可以准确而轻松地提取数据。
+
+有一些很好的开源 linter 可以帮你验证 XML 文件，并且大多数编程语言都提供用于解析 XML 的库。
+
+!!! 二进制格式
+
+Linux 以纯文本配置为傲。这样做的优点是可以使用 cat 等基本工具查看配置数据，甚至可以使用你 最喜欢的文本编辑器 来编辑配置。

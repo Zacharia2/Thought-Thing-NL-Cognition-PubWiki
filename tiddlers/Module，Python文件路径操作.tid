@@ -1,0 +1,17 @@
+created: 20220827011312457
+creator: miao
+modified: 20230615115134222
+modifier: WhiteFall
+tags: [[Module 模块&工具]] $:/tags/Commander/Working
+title: Module，Python文件路径操作
+type: text/vnd.tiddlywiki
+
+https://zhuanlan.zhihu.com/p/449987672
+
+<<<
+文件路径操作是一个非常基础但重要的问题，优雅的路径操作不仅可以让代码可读性更高；还可以让用户避免很多不必要的麻烦。python中路径操作包括三类方法：1. 字符串拼接、2. os.path、3. python 3.4中新增的面向对象的路径操作库 pathlib。
+<<<
+
+''Pathlib''是python3.4中新增的面向对象的文件系统路径操作模块，为不同文件系统提供较为统一的文件系统路径操作方法。
+
+''fileinput''，对文件高效读写的模块

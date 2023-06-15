@@ -1,0 +1,38 @@
+created: 20220827035331686
+creator: miao
+modified: 20230615115134218
+modifier: WhiteFall
+tags: [[Module 模块&工具]] $:/tags/Commander/Working
+title: Module，Excel超集数据分析模块
+type: text/vnd.tiddlywiki
+
+数据分析最常用的几个第三方库。最常用的第三方库有四个：“Matplotlib”、“pandas”、“numpy”、“scipy”。
+
+* ProPlot是Matplotlib面向对象绘图方法(object-oriented interface)的高级封装，整合了cartopy/basemap地图库、xarray和pandas，可弥补Matplotlib的部分缺陷，让Matplotlib爱好者拥有更加smoother plotting experience。
+
+
+
+* ''Matplotlib''：Matplotlib 是 Python 的绘图库，它能让使用者很轻松地将数据图形化，并且提供多样化的输出格式。Matplotlib 可以用来绘制各种静态，动态，交互式的图表Matplotlib 是一个非常强大的 Python 画图工具，我们可以使用该工具将很多数据通过图表的形式更直观的呈现出来。Matplotlib 可以绘制线图、散点图、等高线图、条形图、柱状图、3D 图形、甚至是图形动画等等。我们知道数据分析最后需要可视化呈现，那么最后呈现的图片是否美观一定程度上反映了数据分析结果的好坏，让我们看看Matplotlib能画出哪些优秀的图案：
+
+
+[img class=cimg [Matplotlib绘图01-png]]
+
+[img class=cimg [Matplotlib绘图02-png]]
+
+[img class=cimg [Matplotlib绘图03-png]]
+
+[img class=cimg [Matplotlib绘图04-png]]
+
+
+
+* ''Panda''s：Pandas 是一个开放源码、BSD 许可的库，提供高性能、易于使用的数据结构和数据分析工具。Pandas 名字衍生自术语 "panel data"（面板数据）和 "Python data analysis"（Python 数据分析）。Pandas 一个强大的分析结构化数据的工具集，基础是 Numpy（提供高性能的矩阵运算）。 Pandas 可以从各种文件格式比如 CSV、JSON、SQL、Microsoft Excel 导入数据Pandas 可以对各种数据进行运算操作，比如归并、再成形、选择，还有数据清洗和数据加工特征。Pandas 广泛应用在学术、金融、统计学等各个数据分析领域。
+
+
+* ''Numpy''最主要的功能是矩阵运算，在矩阵运算上的Numpy的运算速度和计算精度都足以媲美MATLAB，但是相比于MATLAB那复杂抽象的语言，Python简单明了的编程方式会极大的提升你解决问题的速度，同时Numpy还有一个良好的社区环境，如果你的程序报错了又没有办法自己解决，你就可以在百度上查询你的bug，基本上都可以解决你遇到的问题，但是由于MATLAB是一个商业软件，他的社区氛围就要差的很多。下面就是numpy计算几个常见矩阵运算的方法：
+** 矩阵转置  mat.T  (mat为矩阵变量ndarray类型)
+** 矩阵求逆 mat.T (mat为矩阵变量ndarray类型)
+** 矩阵的特征值和特征向量   numpy.linalg.det(mat)\np.linalg.eig(mat)
+** 矩阵的最大值和最小值以及均值  numpy.max(mat)\numpy.min(mat)
+** 矩阵的排序 numpy.sort(mat)
+
+* ''SciPy'' 是一个开源的 Python 算法库和数学工具包。Scipy 是基于 Numpy 的科学计算库，用于数学、科学、工程学等领域，很多有一些高阶抽象和物理模型需要使用Scipy。SciPy 包含的模块有最优化、线性代数、积分、插值、特殊函数、快速傅里叶变换、信号处理和图像处理、常微分方程求解和其他科学与工程中常用的计算。SciPy结合上面提到的Numpy和Pandas就可以解决日常生活中遇到的绝大部分数据分析任务，你可以把SciPy理解成一个数学库，这个数学库中包含了绝大部分的数学模型，优化模型（最小二乘法、梯度下降法），线性代数（高维度矩阵运算），以及其他学科的一些模型（计算机视觉中的图像处理、信号学中的傅里叶变化、信号处理等函数）。

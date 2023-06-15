@@ -1,0 +1,31 @@
+created: 20220827004039967
+creator: miao
+modified: 20230615115134223
+modifier: WhiteFall
+tags: [[Module 模块&工具]] $:/tags/Commander/Working
+title: Module，Word自动化库
+type: text/vnd.tiddlywiki
+
+!! python-docx 库
+
+
+<<<
+官网：
+
+https://python-docx.readthedocs.io/en/latest/
+<<<
+
+
+特点：python-docx 是一个用于创建和更新 Microsoft Word (.docx) 文件的 Python 库。快速开始、处理文档、处理文本、使用截面、使用页眉和页脚、API基础理、解样式、使用样式理解图片和其他形状。只对 windows 平台有效。
+
+!! textract 库
+
+
+<<<
+官网：
+
+https://gitee.com/mirrors/textract
+<<<
+
+
+特点：它同时兼顾 “doc” 和 “docx”，但安装过程需要一些依赖。你可以批量的用 python 生成 word 文件，推荐使用 docx，不需要会太多。

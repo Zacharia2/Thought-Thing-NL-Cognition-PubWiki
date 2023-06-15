@@ -1,0 +1,9 @@
+created: 20230615122202198
+creator: WhiteFall
+modified: 20230615122318269
+modifier: WhiteFall
+tags: $:/plugins/linonetwo/itonnote/Sidebar/FolderMenu $:/tags/SideBar
+title: Python
+type: text/vnd.tiddlywiki
+
+<$macrocall $name="locator-view" baseTitle="All in One Python" />

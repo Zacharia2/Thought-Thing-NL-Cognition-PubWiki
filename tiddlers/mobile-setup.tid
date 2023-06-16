@@ -1,0 +1,8 @@
+tags: $:/tags/StartupAction
+title: $:/config/neotw/mobile-setup
+type: text/vnd.tiddlywiki
+
+<$list filter="[[$:/info/browser/is/mobile]get[text]else[no]match[yes]]"> 
+<$action-setfield $tiddler="$:/themes/tiddlywiki/vanilla/options/stickytitles" text="no"/>
+<$action-setfield $tiddler="$:/state/sidebar" text="no"/>
+</$list>

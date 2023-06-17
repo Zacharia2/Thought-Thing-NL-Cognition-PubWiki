@@ -1,6 +1,6 @@
 created: 20230613053120500
 creator: WhiteFall
-modified: 20230617041429544
+modified: 20230617083104126
 modifier: WhiteFall
 tags: 
 title: README
@@ -14,4 +14,4 @@ type: text/vnd.tiddlywiki
 
 * 一个词代表一个具体完整的事物，代表一篇文章，代表压缩之后的知识，代表一个想法和线索。。。
 
-<<.tip "通过外语学习与写作，就越能够体会一字千金的重要性。">>
+<<alert-leftbar secondary "通过外语学习与写作，就越能够体会一字千金的重要性。">>

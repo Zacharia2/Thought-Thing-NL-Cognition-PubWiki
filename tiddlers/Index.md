@@ -1,4 +1,4 @@
-<<dbadge Repository "[[GitHub仓库|https://github.com/Zacharia2/Thought-Thing-NL-Cognition-PubWiki]]" success>> <<dbadge 部署 "[[Github Actions|https://github.com/Zacharia2/Thought-Thing-NL-Cognition-PubWiki/actions]]" success>> <<dbadge 知识结构模型 "[[Self-GrowthKSM|https://github.com/Zacharia2/Meta-R-Notes/tree/main/Self-GrowthKSM]]" info>>
+<<dbadge Repository "[[GitHub仓库|https://github.com/Zacharia2/Thought-Thing-NL-Cognition-PubWiki]]" success>> <<dbadge 部署 "[[Github Actions|https://github.com/Zacharia2/Thought-Thing-NL-Cognition-PubWiki/actions]]" success>> <<dbadge 知识结构模型 "[[Self-GrowthKSM|https://github.com/Zacharia2/Meta-R-Notes/tree/main/Self-GrowthKSM]]" info>> <<dbadge 状态 "陈旧-待更新" warning>>
 
 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
 <$image source="https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg" />
